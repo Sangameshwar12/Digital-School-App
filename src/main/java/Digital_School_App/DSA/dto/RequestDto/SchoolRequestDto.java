@@ -16,8 +16,6 @@ public class SchoolRequestDto {
 
     int codOfSchool;
 
-    String pricipalEmailId;
-
     String nameOfSchool;
 
     String addressOfSchool;

@@ -11,9 +11,10 @@ public class StudentTransformer {
         return Student.builder()
                 .nameOfStudent(studentRequestDto.getNameOfStudent())
                 .age(studentRequestDto.getAge())
-                .dob(studentRequestDto.getDate())
-                .Standard(studentRequestDto.getStandard())
+                .gender(studentRequestDto.getGender())
                 .previousResult(studentRequestDto.getPreviousResult())
+                .Standard(studentRequestDto.getStandard())
+                .dob(studentRequestDto.getDate())
                 .build();
     }
 
@@ -22,7 +23,6 @@ public class StudentTransformer {
         return StudentResponseDto.builder()
                 .age(savedStudent.getAge())
                 .gender(savedStudent.getGender())
-                .nameOfSchool(savedStudent.getSchool().getNameOfSchool())
                 .nameOfString(savedStudent.getNameOfStudent())
                 .build();
     }

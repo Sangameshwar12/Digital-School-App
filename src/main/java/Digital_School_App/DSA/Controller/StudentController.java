@@ -4,6 +4,7 @@ import Digital_School_App.DSA.Service.ServiceImpl.StudentServiceImpl;
 import Digital_School_App.DSA.Service.StudentService;
 import Digital_School_App.DSA.dto.RequestDto.StudentRequestDto;
 import Digital_School_App.DSA.dto.ResponseDto.StudentResponseDto;
+import Digital_School_App.DSA.exception.SchoolNotFoundException;
 import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,8 +24,15 @@ public class StudentController {
     @PostMapping("/add")
     public ResponseEntity addStudent(@RequestBody StudentRequestDto studentRequestDto){
 
-        StudentResponseDto studentResponseDto = studentService.addStudent(studentRequestDto);
-        return new ResponseEntity<>(studentResponseDto, HttpStatus.CREATED);
+
+        try {
+            StudentResponseDto studentResponseDto = null;
+            studentResponseDto = studentService.addStudent(studentRequestDto);
+            return new ResponseEntity<>(studentResponseDto, HttpStatus.CREATED);
+        } catch (SchoolNotFoundException e) {
+            return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+
 
     }
 }
