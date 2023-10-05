@@ -4,6 +4,7 @@ import Digital_School_App.DSA.Enum.Gender;
 import Digital_School_App.DSA.Enum.Subject;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -12,6 +13,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Builder
 
 public class Teacher {
 
@@ -28,6 +30,7 @@ public class Teacher {
 
     private String mobNo;
 
+    @Column(unique = true, nullable = false)
     private String emailId;
 
     @Enumerated(EnumType.STRING)

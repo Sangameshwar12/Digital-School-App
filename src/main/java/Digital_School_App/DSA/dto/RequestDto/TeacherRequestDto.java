@@ -10,18 +10,20 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder
-public class PrinipalRequestDto {
-
-     String name;
-
-     int age;
-
-     String emailId;
-
-     String mobNo;
-
-     Gender gender;
+public class TeacherRequestDto {
 
     int codeOfSchool;
+
+    String nameOfTeacher;
+
+    int age;
+
+    Gender gender;
+
+    String mobNo;
+
+    String emailId;
+
+    Subject subject;
 
 }

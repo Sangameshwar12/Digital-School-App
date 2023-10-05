@@ -1,4 +1,4 @@
-package Digital_School_App.DSA.dto.RequestDto;
+package Digital_School_App.DSA.dto.ResponseDto;
 
 import Digital_School_App.DSA.Enum.Gender;
 import Digital_School_App.DSA.Enum.Subject;
@@ -10,18 +10,19 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder
-public class PrinipalRequestDto {
+public class TeacherResponseDto {
 
-     String name;
+    String name;
 
-     int age;
+    int age;
 
-     String emailId;
+    Gender gender;
 
-     String mobNo;
+    String mobNo;
 
-     Gender gender;
+    String nameOfSchool;
 
-    int codeOfSchool;
+    Subject subject;
+
 
 }
